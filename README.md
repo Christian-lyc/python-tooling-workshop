@@ -1,7 +1,12 @@
+feature/add-ruff-workflow
 # Step 06: Workflow Git professionnel
+
+# Python Tooling Workshop
+ main
 
 ## Objectif
 
+ feature/add-ruff-workflow
 Apprendre à utiliser Git avec un workflow de branches et pull requests.
 
 ## Installation des dépendances
@@ -126,6 +131,13 @@ Format standard pour les messages de commit :
 
 ### Exemples concrets
 
+## Comment utiliser ce workshop
+
+Ce workshop est organisé en **branches progressives**. Chaque branche contient une étape spécifique avec son propre README.
+
+### Navigation entre les étapes
+main
+
 ```bash
 # ✅ Bon
 git commit -m "feat: add filter tasks by status"
@@ -146,6 +158,7 @@ git commit -m "fix(models): handle None in task creation"
 git commit -m "test(services): add TaskManager integration tests"
 ```
 
+feature/add-ruff-workflow
 ### Avantages
 
 - 📚 Historique Git lisible
@@ -334,13 +347,13 @@ git rebase --continue
 
 **Exemple de conflit :**
 ```python
-<<<<<<< HEAD  (version de main)
+ HEAD  (version de main)
 def calculate_total(items):
     return sum(items)
-=======
+
 def calculate_total(items, tax=0.2):  # votre version
     return sum(items) * (1 + tax)
->>>>>>> feature/xyz
+ feature/xyz
 ```
 
 **Résolution :**
@@ -427,3 +440,51 @@ Exercice : créez une branche avec une petite amélioration de votre choix et fa
 → **Step 07: CLI avec Rich et Click**
 
 Vous allez créer une vraie interface en ligne de commande interactive.
+
+### Étapes du workshop
+
+| Branche | Contenu |
+|---------|---------|
+| **step-01-structure** | Structure de projet Python modulaire |
+| **step-02-dependencies** | Environnements virtuels et dépendances |
+| **step-03-implementation** | Implémentation des classes POO |
+| **step-04-linting** | Linting et qualité de code avec Ruff |
+| **step-05-formatting** | Formatage automatique du code |
+| **step-06-git-workflow** | Workflow Git professionnel |
+| **step-07-cli** | Interface CLI avec Rich et Click |
+
+### Démarrage rapide
+
+1. **Choisissez votre étape** :
+   ```bash
+   git checkout step-01-structure  # Pour commencer
+   ```
+
+2. **Lisez le README** de la branche pour les instructions détaillées
+
+3. **Suivez les exercices** pas à pas
+
+### Prérequis
+
+- Python 3.10+
+- Git
+- [UV](https://docs.astral.sh/uv/) (recommandé) ou pip/venv
+- Un éditeur de code (VSCode recommandé)
+
+### Installation des dépendances (à partir de step-02)
+
+```bash
+# Avec UV (recommandé)
+uv sync
+
+# Ou méthode classique
+python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+```
+
+### Pour les formateurs
+
+Voir [docs/masterclass_plan.md](./docs/masterclass_plan.md) pour le plan détaillé de la formation.
+
+
+**Commencez par :** `git checkout step-01-structure`
+main
